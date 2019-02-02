@@ -14,6 +14,17 @@
 
 
 
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
 
 
 
@@ -42,7 +53,9 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -50,18 +63,20 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -70,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Hexo, Geeker">
 
 
 
@@ -123,7 +138,7 @@
 
 
 
-  <title>Hexo, NexT - 馍馍大人的小屋 - 数据不挖掘的故事</title>
+  <title>Hexo, Geeker - 馍馍大人的小屋 - 数据不挖掘的故事</title>
   
 
 
@@ -308,7 +323,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/315-Count-of-Smaller-Numbers-After-Self/" itemprop="url">315. Count of Smaller Numbers After Self</a></h2>
+                <a class="post-title-link" href="/315-Count-of-Smaller-Numbers-After-Self/" itemprop="url">【LeetCode】315. Count of Smaller Numbers After Self</a></h2>
         
 
         <div class="post-meta">
@@ -422,23 +437,15 @@
 
       
         
-          
-            <p>题目链接: <a href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/" target="_blank" rel="noopener">https://leetcode.com/problems/count-of-smaller-numbers-after-self/</a></p>
-<p>吐槽:</p>
+          <p>吐槽:</p>
 <p>LeetCode刷题第N天，说起来都工作一年了，来自工作的收益感觉都没刷题多。事实证明，选好职业方向是多么重要的事情。另外“任何语言都会过时，只有数据结构和算法才能永恒”，还有写题解真的要花好多时间，尽量写一点有代表性的题解吧。</p>
-<p>关于这道题首先是理解题目要求。</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">数组 nums = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="number">5</span> 右边有 <span class="number">2</span> 个元素比 <span class="number">5</span> 小（<span class="number">2</span> 和 <span class="number">1</span>）</span><br><span class="line"><span class="number">2</span> 右边有 <span class="number">1</span> 个元素比 <span class="number">2</span> 小 （<span class="number">1</span>）</span><br><span class="line"><span class="number">6</span> 右边有 <span class="number">1</span> 个元素比 <span class="number">6</span> 小（<span class="number">1</span>）</span><br><span class="line"><span class="number">1</span> 右边有 <span class="number">0</span> 个元素比 <span class="number">1</span> 小</span><br></pre></td></tr></table></figure>
-<p>返回的数组为 [2, 1, 1, 0]</p>
-<p>如果直接写双重循环O(N^2)的代码，直接超时，因为部分case数组长度 20000+，O(N^2)一算，基本就GG了。</p>
-<p>仔细思考一下，其实可以维护一个BST(二叉搜索树)，从右向左进行遍历，同时维护每个树结点中的统计值属性，每次有符合的条件的值进入，更新统计值并且更新结点，将对应的结点生成插入到对应的位置。</p>
-<p>代码如下:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,val)</span>:</span></span><br><span class="line">        self.left = <span class="keyword">None</span></span><br><span class="line">        self.right = <span class="keyword">None</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.count = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insertTree</span><span class="params">(self, root, val)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        tempCount = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">            <span class="keyword">if</span> val &lt;= root.val:</span><br><span class="line">                root.count += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">                    root.left = TreeNode(val)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    root = root.left</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                tempCount += root.count</span><br><span class="line">                <span class="keyword">if</span> root.right <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">                    root.right = TreeNode(val)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    root = root.right</span><br><span class="line">        <span class="keyword">return</span> tempCount</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countSmaller</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># Solution 1: 时间复杂度O(N!),每pop出左侧的一个数字必须遍历剩余的数字获取小于该数字的数字个数, TLE预定。</span></span><br><span class="line">        <span class="comment"># Solution 2: BST</span></span><br><span class="line">        <span class="comment"># Solution 3: 分段树求解</span></span><br><span class="line"></span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> [<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        ans = []</span><br><span class="line">        root = TreeNode(nums[<span class="number">-1</span>])</span><br><span class="line">        ans.append(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            count = self.insertTree(root, nums[i])</span><br><span class="line">            ans.append(count)</span><br><span class="line">        <span class="keyword">return</span> ans[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-<p>仔细看了一下对应的大神的思路:</p>
-<p>1 线段树</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span>[] pos, <span class="keyword">int</span> from, <span class="keyword">int</span> to)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (from&gt;=to) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> m = (from+to)/<span class="number">2</span>;</span><br><span class="line">        sort(nums, pos, from, m);</span><br><span class="line">        sort(nums, pos, m+<span class="number">1</span>, to);</span><br><span class="line">        <span class="keyword">int</span>[] merged = <span class="keyword">new</span> <span class="keyword">int</span>[to-from+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> i=from, j=m+<span class="number">1</span>, p=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i&lt;=m || j&lt;=to) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i&gt;m) &#123;</span><br><span class="line">                merged[p++] = pos[j++];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j&gt;to) &#123;</span><br><span class="line">                merged[p++] = pos[i++];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[pos[i]] &lt;= nums[pos[j]]) &#123;</span><br><span class="line">                merged[p++] = pos[i++];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                merged[p++] = pos[j++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;merged.length; k++) pos[from+k] = merged[k];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span>[] sum, <span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (s&gt;<span class="number">0</span>) &#123;</span><br><span class="line">            count += sum[s];</span><br><span class="line">            s -= (s &amp; -s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span>[] sum, <span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (s&lt;sum.length) &#123;</span><br><span class="line">            sum[s] ++;</span><br><span class="line">            s += (s &amp; -s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">countSmaller</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] pos = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length; i++) pos[i] = i;</span><br><span class="line">        sort(nums, pos, <span class="number">0</span>, nums.length-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span>[] seq = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>, s=<span class="number">0</span>; i&lt;pos.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">0</span> || nums[pos[i]] != nums[pos[i-<span class="number">1</span>]]) seq[pos[i]] = ++ s; <span class="keyword">else</span> seq[pos[i]] = s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] sum = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span>[] smaller = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=nums.length-<span class="number">1</span>; i&gt;=<span class="number">0</span>; i--) &#123;</span><br><span class="line">            smaller[i] = count(sum, seq[i]-<span class="number">1</span>);</span><br><span class="line">            update(sum, seq[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;(nums.length);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;smaller.length; i++) result.add(smaller[i]);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>感觉是没有O(N)的线性解法，如果有大佬有特别高效的解法，欢迎交流探讨。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/315-Count-of-Smaller-Numbers-After-Self/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -506,7 +513,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/312-Burst-Balloons-LeetCode/" itemprop="url">312.Burst Balloons(LeetCode练习)</a></h2>
+                <a class="post-title-link" href="/312-Burst-Balloons-LeetCode/" itemprop="url">【LeetCode】312.Burst Balloons</a></h2>
         
 
         <div class="post-meta">
@@ -620,217 +627,15 @@
 
       
         
-          
-            <p>Given <code>n</code> balloons, indexed from <code>0</code> to <code>n-1</code>. Each balloon is painted with a number on it represented by array <code>nums</code>. You are asked to burst all the balloons. If the you burst balloon <code>i</code>you will get <code>nums[left] * nums[i] * nums[right]</code>coins. Here <code>left</code> and <code>right</code> are adjacent indices of <code>i</code>. After the burst, the <code>left</code> and <code>right</code> then becomes adjacent.</p>
+          <p>Given <code>n</code> balloons, indexed from <code>0</code> to <code>n-1</code>. Each balloon is painted with a number on it represented by array <code>nums</code>. You are asked to burst all the balloons. If the you burst balloon <code>i</code>you will get <code>nums[left] * nums[i] * nums[right]</code>coins. Here <code>left</code> and <code>right</code> are adjacent indices of <code>i</code>. After the burst, the <code>left</code> and <code>right</code> then becomes adjacent.</p>
 <p>Find the maximum coins you can collect by bursting the balloons wisely.</p>
-<p><strong>Note:</strong></p>
-<ul>
-<li>You may imagine <code>nums[-1] = nums[n] = 1</code>. They are not real therefore you can not burst them.</li>
-<li>0 ≤ <code>n</code> ≤ 500, 0 ≤ <code>nums[i]</code> ≤ 100</li>
-</ul>
-<p><strong>Example:</strong></p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,1,5,8]</span><br><span class="line">Output: 167 </span><br><span class="line">Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt; []</span><br><span class="line">             coins =  3<span class="number">*1</span><span class="number">*5</span>      +  3<span class="number">*5</span><span class="number">*8</span>    +  1<span class="number">*3</span><span class="number">*8</span>      + 1<span class="number">*8</span><span class="number">*1</span>   = 167</span><br></pre></td></tr></table></figure>
-<p>解题思路:</p>
-<p><a href="http://bookshadow.com/weblog/2015/11/30/leetcode-burst-balloons/" target="_blank" rel="noopener">Burst Balloons-书影博客</a></p>
-<p><a href="https://blog.csdn.net/swartz2015/article/details/50561199" target="_blank" rel="noopener">Burst Balloons DP分析</a></p>
-<p>根据前面的分析，该问题可以分解为多个子问题，并逐一解决。于是，我们是否可以尝试可以用分治方法来解决呢？</p>
-<p><em>这里需要明确可以用分治方法解决的问题以及可以用DP解决的问题的异同：</em></p>
-<p><em>分治和DP都需要将原问题分解成小问题，然后逐一解决；不过分治方法的每个小问题都是不相关的，而DP的子问题则是重叠的(overlapping)。可以参见wiki百科上面的解释：dynamic programming。</em></p>
-<p>​        但是通过前面的分析也知道，之前描述的子问题都是重叠的 (<em>比如你在计算踩K个气球时的maxcoin，肯定会涉及到踩K-1个气球时的结果，这也是可以用bottom up 的意义</em>)，因此根本不能用分治方法来求解。自然的一个想法是，我们可不可以先把整体分割，再分别在被分割的各个子整体中用bottom up。这显然是可行的。不过问题在于怎么分割整体，因为整体的分割需要保证各个整体在后面的计算中要保持相互独立性。比如对于[a1,a2,a3,a4,a5,a6,……,an]，将分割成两个子整体，分割点为k，则得到 N1 = [a1,a2,a3,….,a(k-1)], N2 = [a(k+1),a(k+2),…..,an]。这里分割点k的意义是踩破了第k个气球。于是把整体分成了两部分，问题在于，根据计算规则，k气球破了之后，a(k-1)和a(k+1)会变成相邻的，如果此时踩a(k-1)或者a(k+1)，则都会收到另一个子整体的影响，这样的话，两个子问题就不独立，也就不能用分治了。所以关键的问题在于确定k。</p>
-<p>可以发现：</p>
-<p>​        <em>N1和N2相互独立    &lt;=&gt;  k点为对于整体N的游戏时，最后一个被踩破的气球。</em></p>
-<p>也就是k点被踩破之前，N1和N2重点的气球都不会相互影响。于是我们就成功构造了子问题。因此分治加dp就可以对问题进行求解了。</p>
-<p>已知的状态转移方程:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[left][right] = max&#123;dp[left][right] , nums[left] * nums[i] * nums[right]  +  nums[left] * nums[i]  +  nums[i] * nums[right]&#125;</span><br></pre></td></tr></table></figure>
-<p>其中 <code>left&lt;i&lt;right , dp[left][right]</code>即为当前子问题：第left和第right之间位置的气球的maxcoin</p>
-<p>C ++ 版本:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxCoins</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[nums.size()+<span class="number">2</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nums.size()+<span class="number">1</span>;++i)arr[i] = nums[i<span class="number">-1</span>];</span><br><span class="line">        arr[<span class="number">0</span>] = arr[nums.size()+<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> dp[nums.size()+<span class="number">2</span>][nums.size()+<span class="number">2</span>]=&#123;&#125;;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size()+<span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">2</span>;k&lt;n;++k)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> left = <span class="number">0</span>;left&lt;n-k;++left)&#123;</span><br><span class="line">                <span class="keyword">int</span> right = left + k;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=left+<span class="number">1</span>;i&lt; right; ++i)</span><br><span class="line">                &#123;</span><br><span class="line">                    dp[left][right] = max(dp[left][right],arr[left]*arr[i]*arr[right] + dp[left][i] + dp[i][right]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][n<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Python版本:</p>
-<p>样例来自<a href="https://leetcode.com/problems/burst-balloons/discuss/76257/Python-solution%3A-beats-98.31" target="_blank" rel="noopener">LeetCode DIscuss</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxCoins</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># Good Solution </span></span><br><span class="line">        <span class="comment"># https://leetcode.com/problems/burst-balloons/discuss/76257/Python-solution%3A-beats-98.31</span></span><br><span class="line">        nums = [<span class="number">1</span>] + nums + [<span class="number">1</span>] </span><br><span class="line">        table = [[<span class="number">0</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(len(nums))] <span class="keyword">for</span> y <span class="keyword">in</span> range(len(nums))]</span><br><span class="line">        <span class="comment"># initialize solutions (table) for 3 consecutive elements</span></span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> k + <span class="number">2</span> &lt; len(nums):</span><br><span class="line">            left, right = k, k + <span class="number">2</span></span><br><span class="line">            table[left][right] = nums[k] * nums[k + <span class="number">1</span>] * nums[k + <span class="number">2</span>]</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> l <span class="keyword">in</span> range(<span class="number">3</span>, len(nums)):</span><br><span class="line">            k = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> k + l &lt; len(nums):</span><br><span class="line">                left, right = k, k + l</span><br><span class="line">                solutions = []</span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> range(left + <span class="number">1</span>, right):</span><br><span class="line">                    ans = table[left][i] + nums[left] * nums[i] * nums[right] + table[i][right]</span><br><span class="line">                    solutions.append(ans)</span><br><span class="line">                solution = max(solutions)</span><br><span class="line">                table[left][right] = solution</span><br><span class="line">                k += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> table[<span class="number">0</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-  <div>
-    
-  </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://marcelarthur.xyz/LeetCode刷题实录_sum合集/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Arthur Marcel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="馍馍大人的小屋">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/LeetCode刷题实录_sum合集/" itemprop="url">LeetCode刷题记录————15. 2sum,3sum,3sum closest,4sum</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-20T17:45:11+08:00">
-                2019-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/LeetCode刷题实录_sum合集/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode刷题实录_sum合集/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  662
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>刷题语言:Python</p>
-<p>2sum </p>
-<p>难度属于Easy 其实可能考虑出现的问题已经被题目取消了，没什么难度 略</p>
-<p>3sum </p>
-<p>如果没什么思路可以先考虑暴力解法，先把问题解决再慢慢优化<br>。。。</p>
-<p>很显然，暴力解法的效率太低了，用例跑了3/4就超时了。</p>
-<p>那么就想办法降低时间复杂度将O（n3）降低为O（n2）</p>
-<p>把3sum的问题分解为2sum的问题再解决，用双指针的思路从两侧一起去找到符合要求的列表,因为已经排序那么去重可以通过简单的判断解决。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">threeSum</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">       <span class="string">"""</span></span><br><span class="line"><span class="string">       :type nums: List[int]</span></span><br><span class="line"><span class="string">       :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">       """</span></span><br><span class="line">       KG = []</span><br><span class="line">       nums.sort()</span><br><span class="line">       <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums) - <span class="number">2</span>):</span><br><span class="line">           <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> nums[i] == nums[i - <span class="number">1</span>]:</span><br><span class="line">               <span class="keyword">continue</span></span><br><span class="line">           left, right = i + <span class="number">1</span>, len(nums) - <span class="number">1</span></span><br><span class="line">           target =nums[i]</span><br><span class="line">           <span class="keyword">while</span> left &lt; right:</span><br><span class="line">               <span class="keyword">if</span> nums[left] + nums[right] + target == <span class="number">0</span>:</span><br><span class="line">                   QT = [nums[i], nums[left], nums[right]]</span><br><span class="line">                   KG.append(QT)</span><br><span class="line">                   <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> nums[left] == nums[left + <span class="number">1</span>]:</span><br><span class="line">                       left += <span class="number">1</span></span><br><span class="line">                   <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> nums[right] == nums[right - <span class="number">1</span>]:</span><br><span class="line">                       right -= <span class="number">1</span></span><br><span class="line">                   left += <span class="number">1</span></span><br><span class="line">                   right -= <span class="number">1</span></span><br><span class="line">               <span class="keyword">elif</span> nums[left] + nums[right] + target &lt; <span class="number">0</span>:</span><br><span class="line">                   left += <span class="number">1</span></span><br><span class="line">               <span class="keyword">else</span>:</span><br><span class="line">                   right -= <span class="number">1</span></span><br><span class="line">       <span class="keyword">return</span> KG</span><br></pre></td></tr></table></figure>
-<p>完美！</p>
-<p>这个题难度为Medium，其实大多数就卡在算法不知道如何优化，新手刷题（比如我）就卡在这里半天，难度实际来看不是很大，算是教训，在此记录</p>
-<p>3sum closest </p>
-<p>类似3sum的解法，另外考虑一下第一次进入判断时没有最小差值的情况</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">threeSumClosest</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">	<span class="string">"""</span></span><br><span class="line"><span class="string">	:type nums: List[int]</span></span><br><span class="line"><span class="string">	:type target: int</span></span><br><span class="line"><span class="string">	:rtype: int</span></span><br><span class="line"><span class="string">	"""</span></span><br><span class="line">	nums.sort()</span><br><span class="line">	mindiff = <span class="number">-1</span></span><br><span class="line">	result = <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)<span class="number">-2</span>):</span><br><span class="line">        left = i + <span class="number">1</span></span><br><span class="line">        right = len(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span>(left &lt; right):</span><br><span class="line">            sum = nums[left] + nums[i] + nums[right]</span><br><span class="line">            diff = abs(sum - target)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> diff == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> sum</span><br><span class="line">            <span class="keyword">if</span> mindiff == <span class="number">-1</span>:</span><br><span class="line">                mindiff = diff</span><br><span class="line">                result = sum</span><br><span class="line">            <span class="keyword">if</span> diff &lt; mindiff:</span><br><span class="line">                mindiff = diff</span><br><span class="line">                result = sum</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> sum &gt; target:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-<p>4 sum</p>
-<p>1 先对列表排序</p>
-<p>2 先确定数组的前两个(a,b), 再利用二分查找确定剩下的(c, d),思路近似于3sum</p>
-<p>3 去重可以通过结构控制解决</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">fourSum</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">       <span class="string">"""</span></span><br><span class="line"><span class="string">       :type nums: List[int]</span></span><br><span class="line"><span class="string">       :type target: int</span></span><br><span class="line"><span class="string">       :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">       """</span></span><br><span class="line">       nums.sort()</span><br><span class="line">       L = list()</span><br><span class="line">       <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)<span class="number">-3</span>):</span><br><span class="line">           <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> nums[i] == nums[i<span class="number">-1</span>]: <span class="keyword">continue</span></span><br><span class="line">           <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(nums)<span class="number">-2</span>):</span><br><span class="line">               <span class="keyword">if</span> j &gt; i + <span class="number">1</span> <span class="keyword">and</span> nums[j] == nums[j<span class="number">-1</span>]:<span class="keyword">continue</span></span><br><span class="line">               left = j + <span class="number">1</span></span><br><span class="line">               right = len(nums) - <span class="number">1</span></span><br><span class="line">               sum = target - nums[i] - nums[j]</span><br><span class="line">               <span class="keyword">while</span> left &lt; right:</span><br><span class="line">                   tmp = nums[left] + nums[right]</span><br><span class="line">                   <span class="keyword">if</span> sum == tmp:</span><br><span class="line">                       QT = [nums[i], nums[j], nums[left], nums[right]]</span><br><span class="line">                       L.append(QT)</span><br><span class="line">                       left += <span class="number">1</span></span><br><span class="line">                       right -= <span class="number">1</span></span><br><span class="line">                       <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> nums[left] == nums[left - <span class="number">1</span>]:</span><br><span class="line">                           left += <span class="number">1</span></span><br><span class="line">                       <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> nums[right] == nums[right + <span class="number">1</span>]:</span><br><span class="line">                           right -= <span class="number">1</span></span><br><span class="line">                   <span class="keyword">elif</span> sum &gt; tmp:</span><br><span class="line">                       left += <span class="number">1</span></span><br><span class="line">                       <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> nums[left] == nums[left - <span class="number">1</span>]:</span><br><span class="line">                           left += <span class="number">1</span></span><br><span class="line">                   <span class="keyword">else</span>:</span><br><span class="line">                       right -= <span class="number">1</span></span><br><span class="line">                       <span class="keyword">while</span> left &lt; right <span class="keyword">and</span> nums[right] == nums[right + <span class="number">1</span>]:</span><br><span class="line">                           right -= <span class="number">1</span></span><br><span class="line">       <span class="keyword">return</span> L</span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/312-Burst-Balloons-LeetCode/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -898,7 +703,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/TopK/" itemprop="url">算法经典问题(TopK)-[LeetCode]215. Kth Largest Element in an Array</a></h2>
+                <a class="post-title-link" href="/TopK/" itemprop="url">【LeetCode】215. Kth Largest Element in an Array</a></h2>
         
 
         <div class="post-meta">
@@ -940,17 +745,6 @@
 
                 
                 
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/算法迷思/" itemprop="url" rel="index">
-                    <span itemprop="name">算法迷思</span>
-                  </a>
-                </span>
-
-                
-                
               
             </span>
           
@@ -985,7 +779,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  506
+                  513
                 </span>
               
 
@@ -1023,31 +817,14 @@
 
       
         
-          
-            <blockquote>
-<ul>
-<li>类型：PriorityQueue + MinHeap</li>
-<li>Time Complexity O(NlogK) 因为每次heap插入时间是log(1), 插入k个就是logk</li>
-<li>Space Complexity O(N)小顶堆</li>
-</ul>
-</blockquote>
-<p>通常来说就是两种解决方案，这里就是其中之一用小顶堆解决的实现。</p>
-<p>Python通过调用第三方的module heapq内部就实现了小顶堆的功能(实际自己实现下也不难),这里直接调用就行了。主要是思想很重要~</p>
-<p>这里的实现是来自<a href="https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/167837/Python-or-Priority-Queue-tm" target="_blank" rel="noopener">Leetcode Discuss Python | Priority Queue - 公瑾™</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findKthLargest</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        min_heap = [-float(<span class="string">'inf'</span>)] * k</span><br><span class="line">        heapq.heapify(min_heap)</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> num &gt; min_heap[<span class="number">0</span>]:</span><br><span class="line">                heapq.heappoppush(min_heap, num)</span><br><span class="line">        <span class="keyword">return</span> min_heap[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<p>实际上这里熟悉heapq的话,这里只需要:</p>
-<p>&lt; = = &gt;</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">findKthLargest</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> heapq.nlargest(k,nums)[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-<p>ps: 关于heapq的使用方法和内部实现可以多下,有助于理解</p>
-<p>另外一种是用快排思想实现的Quick Select。与快排不太相同的是,算法进行中不是对每个子数组都递归判断之后归并，会依据k为长度判断子数组进行递归，这里的实现是返回第k个最大元素,如果要使用需要改动一下，可以保存中间的结果项作为最后的返回值。</p>
-<p>以下是该方法的Java实现:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pivotKey = arr[low];</span><br><span class="line">    <span class="keyword">while</span>(low &lt; high)&#123;</span><br><span class="line">        <span class="keyword">while</span>(low &lt; high &amp;&amp; arr[high] &gt;= pivotKey)</span><br><span class="line">            high--;</span><br><span class="line">        swap(arr, low, high);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(low &lt; high &amp;&amp; arr[low] &lt;= pivotKey)</span><br><span class="line">            low++;</span><br><span class="line">        swap(arr, low, high);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> quickSelect(nums, k, <span class="number">0</span>, nums.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// quick select to find the kth-largest element</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">quickSelect</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> k, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (left == right)</span><br><span class="line">        <span class="keyword">return</span> arr[right];</span><br><span class="line"></span><br><span class="line">    <span class="comment">//patition方法还是用的 快排中的 partition</span></span><br><span class="line">    <span class="keyword">int</span> index = partition(arr, left, right);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (index - left + <span class="number">1</span> &gt; k)</span><br><span class="line">        <span class="keyword">return</span> quickSelect(arr, k, left, index - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (index - left + <span class="number">1</span> == k)</span><br><span class="line">        <span class="keyword">return</span> arr[index];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> quickSelect(arr, k - index + left - <span class="number">1</span>, index + <span class="number">1</span>, right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另: 排序后直接取也能AC,感叹下这感人的性能= =</p>
-<p>3 参考文献</p>
-<p><a href="https://blog.csdn.net/xidiancoder/article/details/77781379?utm_source=copy" target="_blank" rel="noopener">zxca368的博客</a></p>
-<p>James Aspnes, QuickSelect.</p>
-
-          
+          <p>算法经典问题TopK</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/TopK/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1229,50 +1006,14 @@
 
       
         
-          
-            <h1 id="机器学习-随机森林"><a href="#机器学习-随机森林" class="headerlink" title="机器学习 - 随机森林"></a>机器学习 - 随机森林</h1><h2 id="1-什么是随机森林"><a href="#1-什么是随机森林" class="headerlink" title="1.什么是随机森林"></a>1.什么是随机森林</h2><p>首先，随机森林算法是一种监督式分类算法。我们从名字上也能看出来，它是用来以某种方式创建一个森林，并使其随机。森林中的树的数量直接关系到算法得到的结果：树越多，结果就越准确。但是需要注意一点是，创建森林并不等同于用信息增益或构建索引的方法来创建决策。熟悉决策树的人在首次接触随机森林时可能会有些困惑。决策树是一种决策辅助工具，它是用一种树状的图形来展示可能的结果。如果你将一个带有目标和特征的训练集输入到决策树里，它就会表示出一些规律出来。这些规律就可以用于执行预测。举个例子，假如你想预测你的女儿是否会喜欢一部动画片，你就可以收集她以前喜欢的动画片，将某些特征作为输入。然后通过决策树算法，你就可以生成相应的规律。而收集这些信息节点和形成规律的过程就是使用信息增益方法和基尼系数计算的过程。随机森林算法和决策树算法分不同之处就是，在随机森林中，找到根节点和划分特征节点的过程会以随机的方式进行。</p>
-<h2 id="2-为何用随机算法"><a href="#2-为何用随机算法" class="headerlink" title="2.为何用随机算法"></a>2.为何用随机算法</h2><p>我们为何使用随机森林算法主要有四点原因。第一点就是如开头所说，随机森林既可用于分类问题，也可用于回归问题。第二点，过拟合是个非常关键的问题，可能会让模型的结果变得糟糕。但对于随机森林来说，如果森林中的树足够多，那么分类器就不会过拟合模型。第三点是随机森林的分类器可以处理缺失值。最后一点，随机森林分类器可以用分类值建模。</p>
-<h2 id="3-随机森林算法的现实例子"><a href="#3-随机森林算法的现实例子" class="headerlink" title="3.随机森林算法的现实例子"></a>3.随机森林算法的现实例子</h2><p>我们举出一些例子，让你更好的理解随机森林。假设小明想去不同的地方度假两周，向朋友征求意见。朋友会问小明他都去过哪些地方，喜不喜欢这些地方。根据小明的回答，朋友就开始给出建议。这里，小明的朋友用的就是决策树方法。小明想问问更多朋友的意见，因为他觉得一个朋友的方法没法帮他做出准确的决定。于是其他的朋友们同样问了小明很多随机的问题，然后给出建议。最后，小明把推荐人数最多的那个地方作为度假目的地。我们详细说说这里所举的例子。其中一位朋友问了小明一些问题，并根据他的回答给出了目的地建议。单从这里看，这是典型的决策树方法。朋友根据小明的回答形成了规律，然后用规律去找到符合规律的答案。但小明的朋友们同时还以随机的方式问了他很多不同的问题，并给出了建议，也就是对度假目的地的投票。最后，得票率最高的地方就是小明选择的目的地。这里用到的就是典型的随机森林方法。</p>
-<h2 id="4-随机森林算法的工作原理"><a href="#4-随机森林算法的工作原理" class="headerlink" title="4.随机森林算法的工作原理"></a>4.随机森林算法的工作原理</h2><p>随机森林算法又两个阶段，一个阶段是创建随机森林，另一个是根据前一个阶段创建的随机森林分类器做出预测。整个过程如下所示：</p>
-<ol>
-<li>从全部“m”个特征中随机选择“K”个特征，其中k &lt;&lt; m</li>
-<li>在“K”个特征中，用最佳分裂点计算节点“d”</li>
-<li>用最佳分裂将节点分裂为子节点</li>
-<li>重复前面三步的过程，直到获得“I”个数量的节点</li>
-<li>重复第1到第4步“n”次创建“n”个树，从而形成一个森林。</li>
-</ol>
-<p>在第二阶段，根据上一阶段创建的随机森林分类器，我们会做出预测。过程如下：</p>
-<img src="/MachineLearning-Random-Forest/random_dataset.jpg" title="The process of randomly extracting features from random forests">
-<blockquote>
-<ul>
-<li>选取测试特征，用每个随机创建的决策树的规律去预测结果，并保存预测的结果（目标）。</li>
-<li>结算每个预测目标的得票数。</li>
-<li>将得票最多的预测目标作为随机森林算法的最终预测。</li>
-</ul>
-</blockquote>
-<h2 id="5-随机森林的应用案例"><a href="#5-随机森林的应用案例" class="headerlink" title="5.随机森林的应用案例"></a>5.随机森林的应用案例</h2><p>在这部分我们列举随机森林算法在4个领域的应用案例：银行、医疗、股市和电子商务。</p>
-<blockquote>
-<ul>
-<li>在银行领域，随机森林算法可用于发现忠诚客户，也就是说客户经常从银行借贷并且按时还款，同样也能用于发现欺诈客户，即那些没有按时还款且行为异常的人。</li>
-<li>在医疗领域，随机森林算法能够用于识别医药中的不同成分是否以正确的方式组合在以前，也可通过分析患者的病历识别疾病。</li>
-<li>在股市方面，随机森林算法可以用于识别股票的波动行为，预估损失或收益。</li>
-<li>在电子商务方面，随机森林算法可用于根据顾客的购物经历，预测他们是否喜欢系统推荐的商品。</li>
-</ul>
-</blockquote>
-<h2 id="6-随机森林的优点"><a href="#6-随机森林的优点" class="headerlink" title="6.随机森林的优点"></a>6.随机森林的优点</h2><p>和其它分类方法相比，随机森林算法有三个优势：</p>
-<blockquote>
-<ul>
-<li>在分类问题的应用方面，随机森林算法可以避免过拟合问题。</li>
-<li>对于分类任务和回归任务，可以使用同一个随机森林算法。</li>
-<li>随机森林算法能够用于从训练数据集中识别出最重要的特征，即特征工程。</li>
-</ul>
-</blockquote>
-<h3 id="7-随机森林的局限性"><a href="#7-随机森林的局限性" class="headerlink" title="7.随机森林的局限性"></a>7.随机森林的局限性</h3><p>随机森林还有一些局限性：当我们需要推断超出范围的独立变量或非独立变量，随机森林做得并不好，我们最好使用如 MARS 那样的算法。随机森林算法在训练和预测时都比较慢。如果需要区分的类别十分多，随机森林的表现并不会很好。总的来说，随机森林在很多任务上一般要比提升方法的精度差，并且运行时间也更长。所以在 Kaggle 竞赛上，有很多模型都是使用的梯度提升树算法或其他优秀的提升方法。</p>
-<hr>
-<p>本文转载自<a href="https://zhuanlan.zhihu.com/p/38383952" target="_blank" rel="noopener">景略集智</a></p>
-<p>参考资料<a href="https://zhuanlan.zhihu.com/p/28217071" target="_blank" rel="noopener">从决策树到随机森林：树型算法的原理与实现</a></p>
-
-          
+          <p>随机森林的前世今生</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/MachineLearning-Random-Forest/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1340,7 +1081,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/LeetCode每日三题pickone-837-New-21-Game/" itemprop="url">LeetCode每日三题pickone(837 New 21 Game)</a></h2>
+                <a class="post-title-link" href="/LeetCode每日三题pickone-837-New-21-Game/" itemprop="url">【LeetCode】837. New 21 Game</a></h2>
         
 
         <div class="post-meta">
@@ -1454,36 +1195,16 @@
 
       
         
-          
-            <h3 id="Problems"><a href="#Problems" class="headerlink" title="Problems:"></a>Problems:</h3><p>Alice plays the following game, loosely based on the card game “21”.</p>
+          <h3 id="Problems"><a href="#Problems" class="headerlink" title="Problems:"></a>Problems:</h3><p>Alice plays the following game, loosely based on the card game “21”.</p>
 <p>Alice starts with 0 points, and draws numbers while she has less than K points.  During each draw, she gains an integer number of points randomly from the range [1, W], where W is an integer.  Each draw is independent and the outcomes have equal probabilities.</p>
 <p>Alice stops drawing numbers when she gets K or more points.  What is the probability that she has N or less points?</p>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: <span class="attr">N</span> = <span class="number">10</span>, <span class="attr">K</span> = <span class="number">1</span>, <span class="attr">W</span> = <span class="number">10</span></span><br><span class="line">Output: <span class="number">1.00000</span></span><br><span class="line">Explanation:  Alice gets a single card, <span class="keyword">then</span> stops.</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: N = <span class="number">6</span>, K = <span class="number">1</span>, W = <span class="number">10</span></span><br><span class="line">Output: <span class="number">0.60000</span></span><br><span class="line">Explanation:  Alice gets a single card, <span class="keyword">then</span> stops.<span class="keyword">In</span> <span class="number">6</span> <span class="keyword">out</span> <span class="keyword">of</span> W = <span class="number">10</span> possibilities, she <span class="keyword">is</span> <span class="keyword">at</span> <span class="keyword">or</span> below N = <span class="number">6</span> points.</span><br></pre></td></tr></table></figure>
-<p><strong>Example 3:</strong></p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Input</span>: <span class="keyword">N</span> = <span class="number">21</span>, <span class="keyword">K</span> = <span class="number">17</span>, W = <span class="number">10</span></span><br><span class="line">Output: <span class="number">0.73278</span></span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong></p>
-<ol>
-<li>==0 &lt;= K &lt;= N &lt;= 10000==</li>
-<li>==1 &lt;= W &lt;= 10000==</li>
-<li>Answers will be accepted as correct if they are within ==10^-5== of the correct answer.</li>
-<li>The judging time limit has been reduced for this question.</li>
-</ol>
-<hr>
-<p>DP动态规划。虽然知道需要DP规划来解决问题但是没有具体思路。看到一些大神的想法特别记录如下。</p>
-<p>Solution1:</p>
-<p>思路:<br>题目的意思是，在已有点数不超过K的情况下，可以从[1, W]中任选一个数，保证和不超过N。求最后当点数超过K时，这个点数小于N的概率。这个问题其实类似于爬楼梯，每次可跨上[1, W]阶楼梯。<br>采用动态规划，dp[i]表示点数为i的概率，只有当已有点数小于K时，才能再取数，所以有：<br>当i&lt;=K时，dp[i] = (前W个dp之和) / W<br>当K&lt; i&lt; K+W时，前一次最多只能是K-1点，最少为i-W点，所以dp[i] = (dp[K-1]+dp[K-2]+…+dp[i-W])/W<br>当i &gt;= K+W时，无论如何都无法取到，dp[i] = 0</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">new21Game</span><span class="params">(self, N, K, W)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type N: int</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :type W: int</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> K == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        dp = [<span class="number">1.0</span>] + [<span class="number">0.0</span>] * N</span><br><span class="line">        <span class="comment"># Wsum表示(前W个dp之和)/W</span></span><br><span class="line">        Wsum = <span class="number">1.0000</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, N + <span class="number">1</span>):</span><br><span class="line">            dp[i] = Wsum / W</span><br><span class="line">            <span class="comment"># 因为当i&gt;=K时，不能再取数，因此后面的概率不能累加</span></span><br><span class="line">            <span class="keyword">if</span> i &lt; K: Wsum += dp[i]</span><br><span class="line">            <span class="comment"># 因为只需要计算前w个dp之和，所以当i&gt;=W时，减去最前面的dp。</span></span><br><span class="line">            <span class="keyword">if</span> <span class="number">0</span> &lt;= i - W &lt; K: Wsum -= dp[i - W]</span><br><span class="line">        <span class="keyword">return</span> sum(dp[K:])</span><br></pre></td></tr></table></figure>
-<p>Solution2:</p>
-<p>同样是动态规划，下面这样同时额外维护一个结果列表，可以减少复杂度。<br>思路类似上面，不过是从后往前逆推得到结果。当然由于增加了空间复杂度和维护列表的成本，速度也不是很快。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">new21Game</span><span class="params">(self, N, K, W)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type N: int</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :type W: int</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        dp = [<span class="number">0.0</span>]*(N+W+<span class="number">2</span>)</span><br><span class="line">        sum = [<span class="number">0.0</span>]*(N+W+<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(N+W+<span class="number">1</span>,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> i&gt;N: <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> i&gt;=K: dp[i]=<span class="number">1.0</span></span><br><span class="line">            <span class="keyword">else</span>: dp[i]=(sum[i+<span class="number">1</span>]-sum[i+<span class="number">1</span>+W])/W</span><br><span class="line">            </span><br><span class="line">            sum[i] = sum[i+<span class="number">1</span>]+dp[i]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<p>Solution3:</p>
-<p>社区高效答案。理论上同解题3，不过效率比使用额外列表维护要高的多，同时减少了判断的开销。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">new21Game</span><span class="params">(self, N, K, W)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type N: int</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :type W: int</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        he key recursion is f(x) = (1/W) * (f(x+1) + f(x+2) + ... + f(x+W))</span></span><br><span class="line"><span class="string">        This is because there is a probability of \frac&#123;1&#125;&#123;W&#125; to draw each card from 1 to W</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        dp = [<span class="number">0.0</span>] * (N + W + <span class="number">1</span>)</span><br><span class="line">        <span class="comment"># dp[x] = the answer when Alice has x points</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(K, N + <span class="number">1</span>):</span><br><span class="line">            dp[k] = <span class="number">1.0</span></span><br><span class="line"></span><br><span class="line">        S = min(N - K + <span class="number">1</span>, W)</span><br><span class="line">        <span class="comment"># S = dp[k+1] + dp[k+2] + ... + dp[k+W]</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(K - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            dp[k] = S / W</span><br><span class="line">            S += dp[k] - dp[k + W]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/LeetCode每日三题pickone-837-New-21-Game/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1551,7 +1272,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/LeetCode每日三题pickone-39-Combination-Sum/" itemprop="url">LeetCode每日三题pickone(39 Combination Sum)</a></h2>
+                <a class="post-title-link" href="/LeetCode每日三题pickone-39-Combination-Sum/" itemprop="url">【LeetCode】39. Combination Sum</a></h2>
         
 
         <div class="post-meta">
@@ -1665,30 +1386,15 @@
 
       
         
-          
-            <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem:"></a>Problem:</h3><p>Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.</p>
+          <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem:"></a>Problem:</h3><p>Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.</p>
 <p>The same repeated number may be chosen from candidates unlimited number of times.</p>
-<p><strong>Note</strong>:</p>
-<p>All numbers (including target) will be positive integers.<br>The solution set must not contain duplicate combinations.<br><strong>Example</strong> 1:</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: candidates = <span class="comment">[2,3,6,7]</span>, target = 7,</span><br><span class="line">A solution set <span class="keyword">is</span>:</span><br><span class="line"><span class="comment">[</span></span><br><span class="line"><span class="comment">  <span class="comment">[7]</span>,</span></span><br><span class="line"><span class="comment">  <span class="comment">[2,2,3]</span></span></span><br><span class="line"><span class="comment">]</span></span><br></pre></td></tr></table></figure>
-<p><strong>Example</strong> 2:</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: candidates = <span class="comment">[2,3,5]</span>, target = 8,</span><br><span class="line">A solution set <span class="keyword">is</span>:</span><br><span class="line"><span class="comment">[</span></span><br><span class="line"><span class="comment">  <span class="comment">[2,2,2,2]</span>,</span></span><br><span class="line"><span class="comment">  <span class="comment">[2,3,3]</span>,</span></span><br><span class="line"><span class="comment">  <span class="comment">[3,5]</span></span></span><br><span class="line"><span class="comment">]</span></span><br></pre></td></tr></table></figure>
-<p>来源:</p>
-<p><a href="https://leetcode.com/problems/combination-sum/description/" target="_blank" rel="noopener">39-Combination Sum</a></p>
-<hr>
-<p>Solution:</p>
-<p>经典回溯法。排序后尝试加入每个candidates中的数添加到临时数组中，如果满足条件则添加到结果集，小于则继续添加，大于则返回移除后继续查找。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combinationSum</span><span class="params">(self, candidates, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type candidates: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">        templist = []</span><br><span class="line">        candidates.sort()</span><br><span class="line">        self.backtrace(res, templist, candidates, target, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backtrace</span><span class="params">(self, res, templist, candidates, remain, start)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> remain &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> remain == <span class="number">0</span>:</span><br><span class="line">            res.append(templist[:])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(start, len(candidates)):</span><br><span class="line">                templist.append(candidates[i])</span><br><span class="line">                self.backtrace(res, templist, candidates, remain - candidates[i], i)</span><br><span class="line">                templist.remove(candidates[i])</span><br></pre></td></tr></table></figure></p>
-<p>Current optimal solution:</p>
-<p>社区目前的最优解，高效简洁<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combinationSum</span><span class="params">(self, candidates, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type candidates: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        result = []</span><br><span class="line">        candidates.sort()</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(remain, stack)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> remain == <span class="number">0</span>:</span><br><span class="line">                result.append(stack[:])</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> candidates:</span><br><span class="line">                <span class="keyword">if</span> item &gt; remain:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">if</span> stack <span class="keyword">and</span> item &lt; stack[<span class="number">-1</span>]:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dfs(remain - item, stack + [item])</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        dfs(target, [])</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
-<p>参考资料:</p>
-<p><a href="https://blog.csdn.net/u012033124/article/details/80641202" target="_blank" rel="noopener">https://blog.csdn.net/u012033124/article/details/80641202</a></p>
-<p><a href="https://leetcode.com/problems/combination-sum/discuss/" target="_blank" rel="noopener">https://leetcode.com/problems/combination-sum/discuss/</a></p>
-<p>类似题目:</p>
-<p><a href="https://leetcode.com/problems/combination-sum-ii/description/" target="_blank" rel="noopener">40-Combination Sum II</a></p>
-<p><a href="https://leetcode.com/problems/combination-sum-iii/description/" target="_blank" rel="noopener">216-Combination Sum III</a></p>
-<p><a href="https://leetcode.com/problems/combination-sum-iv/description/" target="_blank" rel="noopener">377-Combination Sum IV</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/LeetCode每日三题pickone-39-Combination-Sum/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1756,7 +1462,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/LeetCode每日三题pickone-826-Most-Profit-Assigning-Work/" itemprop="url">LeetCode每日三题pickone(826. Most Profit Assigning Work)</a></h2>
+                <a class="post-title-link" href="/LeetCode每日三题pickone-826-Most-Profit-Assigning-Work/" itemprop="url">【LeetCode】826. Most Profit Assigning Work</a></h2>
         
 
         <div class="post-meta">
@@ -1870,29 +1576,207 @@
 
       
         
-          
-            <h3 id="Problems"><a href="#Problems" class="headerlink" title="Problems:"></a>Problems:</h3><p>We have jobs: difficulty[i] is the difficulty of the ith job, and profit[i] is the profit of the ith job. </p>
+          <h3 id="Problems"><a href="#Problems" class="headerlink" title="Problems:"></a>Problems:</h3><p>We have jobs: difficulty[i] is the difficulty of the ith job, and profit[i] is the profit of the ith job. </p>
 <p>Now we have some workers. worker[i] is the ability of the ith worker, which means that this worker can only complete a job with difficulty at most worker[i]. </p>
 <p>Every worker can be assigned at most one job, but one job can be completed multiple times.</p>
 <p>For example, if 3 people attempt the same job that pays $1, then the total profit will be $3.  If a worker cannot complete any job, his profit is $0.</p>
 <p>What is the most profit we can make?</p>
-<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h4><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: difficulty = <span class="comment">[2,4,6,8,10]</span>, profit = <span class="comment">[10,20,30,40,50]</span>, worker = <span class="comment">[4,5,6,7]</span></span><br><span class="line">Output: 100 </span><br><span class="line">Explanation: Workers <span class="keyword">are</span> assigned jobs <span class="keyword">of</span> difficulty <span class="comment">[4,4,6,6]</span> and they get profit <span class="keyword">of</span> <span class="comment">[20,20,30,30]</span> seperately.</span><br></pre></td></tr></table></figure>
-<h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes:"></a>Notes:</h4><ul>
-<li>1 &lt;= difficulty.length = profit.length &lt;= 10000</li>
-<li>1 &lt;= worker.length &lt;= 10000</li>
-<li>difficulty[i], profit[i], worker[i]  are in range [1, 10^5]</li>
-</ul>
-<hr>
-<p>方案1：贪心算法 - 普通的实现思路: 遍历这个员工可用的最大的价值，累加得到最终结果。 时间复杂度O(N^2)，通常第一时间想到的就是时间最不可能的orz。 很显然，太暴力了，超时= = </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Solution1: Runtime Time out</span></span><br><span class="line"><span class="comment"># Fail Function</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfitAssignment</span><span class="params">(self, difficulty, profit, worker)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type difficulty: List[int]</span></span><br><span class="line"><span class="string">        :type profit: List[int]</span></span><br><span class="line"><span class="string">        :type worker: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        profit_dict = dict()</span><br><span class="line">        <span class="keyword">for</span> z, profit_one <span class="keyword">in</span> enumerate(profit):</span><br><span class="line">        profit_dict[z] = profit_one</span><br><span class="line">        max_salary = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i, workone <span class="keyword">in</span> enumerate(worker):</span><br><span class="line">        max_count = <span class="number">0</span> </span><br><span class="line">        <span class="keyword">for</span> j, difficulty_one <span class="keyword">in</span> enumerate(difficulty):</span><br><span class="line">            <span class="keyword">if</span> workone &gt;= difficulty_one:</span><br><span class="line">                max_count = max(max_count, profit_dict[j])</span><br><span class="line">        max_salary += max_count</span><br><span class="line">        <span class="keyword">return</span> max_salary</span><br></pre></td></tr></table></figure>
-<hr>
-<p>方案2：那么另一个方法就是对于&lt;difficulty, profit&gt;这个pair进行排序，按照difficulty为index升序排列。同时对于worker也升序排序。这样两个都排序完后，就可以对于每个worker，找到所有difficulty &lt; worker的job，看看哪个job能获得最大的利润就把这个job分配给当前的worker。这样下来的时间复杂度是O(NlogN+QlogQ), 其中N是job的数量，Q是worker的数量，另外对于已经排序过的列表，可以使用利用二分、two-pointer这种优化更快的得到结果,将时间复杂度降到O(N+Q)。结果==AC - 99.09%==</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Solution2: 99.09% AC </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfitAssignment</span><span class="params">(self, difficulty, profit, worker)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type difficulty: List[int]</span></span><br><span class="line"><span class="string">        :type profit: List[int]</span></span><br><span class="line"><span class="string">        :type worker: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        profit_zip = zip(difficulty, profit)</span><br><span class="line">        pro_list = [x <span class="keyword">for</span> x <span class="keyword">in</span> profit_zip]</span><br><span class="line">        pro_list.sort()</span><br><span class="line">        worker.sort()</span><br><span class="line">        </span><br><span class="line">        i = max_p = <span class="number">0</span></span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> worker:</span><br><span class="line">            <span class="keyword">while</span> i &lt; len(worker) <span class="keyword">and</span> pro_list[i][<span class="number">0</span>] &lt;= w:</span><br><span class="line">                max_p = max(max_p, pro_list[i][<span class="number">1</span>])</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            result += max_p</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-<hr>
-<p>方案3: 看到一个大神的思路，记录下。借鉴桶排序的的思想,首先分配一个数组d[100001]代表每个difficulty的最大profit，先初始化值，然后从前到后扫一遍，确保每个d[i]放的的确是difficulty为i时的最大利润。 ——@WhzisZihan 结果待验证</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//C++版</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">maxProfitAssignment</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; difficulty, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; profit, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; worker)</span> </span>&#123;</span><br><span class="line">            <span class="built_in">memset</span>(cnt, <span class="number">0</span>, <span class="keyword">sizeof</span>(cnt));</span><br><span class="line">            <span class="keyword">int</span> dsize = difficulty.size(), wsize = worker.size(), res = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dsize; ++i) &#123;</span><br><span class="line">                cnt[difficulty[i]] = (profit[i] &gt; cnt[difficulty[i]] ? profit[i] : cnt[difficulty[i]]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">100000</span>; ++i) &#123;</span><br><span class="line">                cnt[i] = (cnt[i] &lt; cnt[i - <span class="number">1</span>] ? cnt[i - <span class="number">1</span>] : cnt[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// then just sum all the expected profit of each worker in corresponding diffculty</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; wsize; ++i) &#123;</span><br><span class="line">                res += cnt[worker[i]];</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> cnt[<span class="number">100001</span>]; <span class="comment">// the range is from [1, 100000]</span></span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-<h5 id="python版本随后补充-gt-未完待续-2018-08-05"><a href="#python版本随后补充-gt-未完待续-2018-08-05" class="headerlink" title="python版本随后补充  &gt;未完待续 2018/08/05"></a>python版本随后补充  &gt;未完待续 2018/08/05</h5>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/LeetCode每日三题pickone-826-Most-Profit-Assigning-Work/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+  <div>
+    
+  </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://marcelarthur.xyz/LeetCode刷题实录_sum合集/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Arthur Marcel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="馍馍大人的小屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/LeetCode刷题实录_sum合集/" itemprop="url">【LeetCode】求和问题合集(2sum,3sum,3sum closest,4sum)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-01T19:21:48+08:00">
+                2017-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/LeetCode刷题实录_sum合集/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode刷题实录_sum合集/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  668
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>经典求和问题~</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/LeetCode刷题实录_sum合集/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1996,7 +1880,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2141,37 +2025,37 @@
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
   
 
 

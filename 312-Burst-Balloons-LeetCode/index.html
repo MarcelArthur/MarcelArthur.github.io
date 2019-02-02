@@ -14,6 +14,17 @@
 
 
 
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
 
 
 
@@ -42,7 +53,9 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -50,18 +63,20 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -70,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode,DP,分治,">
+  <meta name="keywords" content="DP,分治,">
 
 
 
@@ -82,16 +97,16 @@
 
 
 <meta name="description" content="Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon iyou will get nums[lef">
-<meta name="keywords" content="LeetCode,DP,分治">
+<meta name="keywords" content="DP,分治">
 <meta property="og:type" content="article">
-<meta property="og:title" content="312.Burst Balloons(LeetCode练习)">
+<meta property="og:title" content="【LeetCode】312.Burst Balloons">
 <meta property="og:url" content="http://marcelarthur.xyz/312-Burst-Balloons-LeetCode/index.html">
 <meta property="og:site_name" content="馍馍大人的小屋">
 <meta property="og:description" content="Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon iyou will get nums[lef">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-31T13:26:56.499Z">
+<meta property="og:updated_time" content="2019-02-02T09:18:21.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="312.Burst Balloons(LeetCode练习)">
+<meta name="twitter:title" content="【LeetCode】312.Burst Balloons">
 <meta name="twitter:description" content="Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon iyou will get nums[lef">
 
 
@@ -128,7 +143,7 @@
 
 
 
-  <title>312.Burst Balloons(LeetCode练习) | 馍馍大人的小屋</title>
+  <title>【LeetCode】312.Burst Balloons | 馍馍大人的小屋</title>
   
 
 
@@ -310,7 +325,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">312.Burst Balloons(LeetCode练习)</h2>
+          <h2 class="post-title" itemprop="name headline">【LeetCode】312.Burst Balloons</h2>
         
 
         <div class="post-meta">
@@ -430,6 +445,7 @@
       
         <p>Given <code>n</code> balloons, indexed from <code>0</code> to <code>n-1</code>. Each balloon is painted with a number on it represented by array <code>nums</code>. You are asked to burst all the balloons. If the you burst balloon <code>i</code>you will get <code>nums[left] * nums[i] * nums[right]</code>coins. Here <code>left</code> and <code>right</code> are adjacent indices of <code>i</code>. After the burst, the <code>left</code> and <code>right</code> then becomes adjacent.</p>
 <p>Find the maximum coins you can collect by bursting the balloons wisely.</p>
+<a id="more"></a>
 <p><strong>Note:</strong></p>
 <ul>
 <li>You may imagine <code>nums[-1] = nums[n] = 1</code>. They are not real therefore you can not burst them.</li>
@@ -481,8 +497,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
-          
             <a href="/tags/DP/" rel="tag"><i class="fa fa-tag"></i> DP</a>
           
             <a href="/tags/分治/" rel="tag"><i class="fa fa-tag"></i> 分治</a>
@@ -498,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/LeetCode刷题实录_sum合集/" rel="next" title="LeetCode刷题记录————15. 2sum,3sum,3sum closest,4sum">
-                <i class="fa fa-chevron-left"></i> LeetCode刷题记录————15. 2sum,3sum,3sum closest,4sum
+              <a href="/TopK/" rel="next" title="【LeetCode】215. Kth Largest Element in an Array">
+                <i class="fa fa-chevron-left"></i> 【LeetCode】215. Kth Largest Element in an Array
               </a>
             
           </div>
@@ -508,8 +522,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/315-Count-of-Smaller-Numbers-After-Self/" rel="prev" title="315. Count of Smaller Numbers After Self">
-                315. Count of Smaller Numbers After Self <i class="fa fa-chevron-right"></i>
+              <a href="/315-Count-of-Smaller-Numbers-After-Self/" rel="prev" title="【LeetCode】315. Count of Smaller Numbers After Self">
+                【LeetCode】315. Count of Smaller Numbers After Self <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -636,7 +650,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -781,37 +795,37 @@ var jiathis_config={
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
   
 
 
@@ -861,7 +875,7 @@ var jiathis_config={
         var disqus_config = function () {
           this.page.url = 'http://marcelarthur.xyz/312-Burst-Balloons-LeetCode/';
           this.page.identifier = '312-Burst-Balloons-LeetCode/';
-          this.page.title = '312.Burst Balloons(LeetCode练习)';
+          this.page.title = '【LeetCode】312.Burst Balloons';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://marcelarthur.disqus.com/embed.js';

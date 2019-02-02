@@ -14,6 +14,17 @@
 
 
 
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
 
 
 
@@ -42,7 +53,9 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -50,18 +63,20 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -81,19 +96,19 @@
 
 
 
-<meta name="description" content="机器学习 - 随机森林1.什么是随机森林首先，随机森林算法是一种监督式分类算法。我们从名字上也能看出来，它是用来以某种方式创建一个森林，并使其随机。森林中的树的数量直接关系到算法得到的结果：树越多，结果就越准确。但是需要注意一点是，创建森林并不等同于用信息增益或构建索引的方法来创建决策。熟悉决策树的人在首次接触随机森林时可能会有些困惑。决策树是一种决策辅助工具，它是用一种树状的图形来展示可能的结果">
+<meta name="description" content="随机森林的前世今生">
 <meta name="keywords" content="随机森林,机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MachineLearning Random Forest">
 <meta property="og:url" content="http://marcelarthur.xyz/MachineLearning-Random-Forest/index.html">
 <meta property="og:site_name" content="馍馍大人的小屋">
-<meta property="og:description" content="机器学习 - 随机森林1.什么是随机森林首先，随机森林算法是一种监督式分类算法。我们从名字上也能看出来，它是用来以某种方式创建一个森林，并使其随机。森林中的树的数量直接关系到算法得到的结果：树越多，结果就越准确。但是需要注意一点是，创建森林并不等同于用信息增益或构建索引的方法来创建决策。熟悉决策树的人在首次接触随机森林时可能会有些困惑。决策树是一种决策辅助工具，它是用一种树状的图形来展示可能的结果">
+<meta property="og:description" content="随机森林的前世今生">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://marcelarthur.xyz/MachineLearning-Random-Forest/random_dataset.jpg">
-<meta property="og:updated_time" content="2019-02-02T05:23:27.840Z">
+<meta property="og:updated_time" content="2019-02-02T09:21:43.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MachineLearning Random Forest">
-<meta name="twitter:description" content="机器学习 - 随机森林1.什么是随机森林首先，随机森林算法是一种监督式分类算法。我们从名字上也能看出来，它是用来以某种方式创建一个森林，并使其随机。森林中的树的数量直接关系到算法得到的结果：树越多，结果就越准确。但是需要注意一点是，创建森林并不等同于用信息增益或构建索引的方法来创建决策。熟悉决策树的人在首次接触随机森林时可能会有些困惑。决策树是一种决策辅助工具，它是用一种树状的图形来展示可能的结果">
+<meta name="twitter:description" content="随机森林的前世今生">
 <meta name="twitter:image" content="http://marcelarthur.xyz/MachineLearning-Random-Forest/random_dataset.jpg">
 
 
@@ -430,7 +445,9 @@
       
 
       
-        <h1 id="机器学习-随机森林"><a href="#机器学习-随机森林" class="headerlink" title="机器学习 - 随机森林"></a>机器学习 - 随机森林</h1><h2 id="1-什么是随机森林"><a href="#1-什么是随机森林" class="headerlink" title="1.什么是随机森林"></a>1.什么是随机森林</h2><p>首先，随机森林算法是一种监督式分类算法。我们从名字上也能看出来，它是用来以某种方式创建一个森林，并使其随机。森林中的树的数量直接关系到算法得到的结果：树越多，结果就越准确。但是需要注意一点是，创建森林并不等同于用信息增益或构建索引的方法来创建决策。熟悉决策树的人在首次接触随机森林时可能会有些困惑。决策树是一种决策辅助工具，它是用一种树状的图形来展示可能的结果。如果你将一个带有目标和特征的训练集输入到决策树里，它就会表示出一些规律出来。这些规律就可以用于执行预测。举个例子，假如你想预测你的女儿是否会喜欢一部动画片，你就可以收集她以前喜欢的动画片，将某些特征作为输入。然后通过决策树算法，你就可以生成相应的规律。而收集这些信息节点和形成规律的过程就是使用信息增益方法和基尼系数计算的过程。随机森林算法和决策树算法分不同之处就是，在随机森林中，找到根节点和划分特征节点的过程会以随机的方式进行。</p>
+        <p>随机森林的前世今生</p>
+<a id="more"></a>
+<h2 id="1-什么是随机森林"><a href="#1-什么是随机森林" class="headerlink" title="1.什么是随机森林"></a>1.什么是随机森林</h2><p>首先，随机森林算法是一种监督式分类算法。我们从名字上也能看出来，它是用来以某种方式创建一个森林，并使其随机。森林中的树的数量直接关系到算法得到的结果：树越多，结果就越准确。但是需要注意一点是，创建森林并不等同于用信息增益或构建索引的方法来创建决策。熟悉决策树的人在首次接触随机森林时可能会有些困惑。决策树是一种决策辅助工具，它是用一种树状的图形来展示可能的结果。如果你将一个带有目标和特征的训练集输入到决策树里，它就会表示出一些规律出来。这些规律就可以用于执行预测。举个例子，假如你想预测你的女儿是否会喜欢一部动画片，你就可以收集她以前喜欢的动画片，将某些特征作为输入。然后通过决策树算法，你就可以生成相应的规律。而收集这些信息节点和形成规律的过程就是使用信息增益方法和基尼系数计算的过程。随机森林算法和决策树算法分不同之处就是，在随机森林中，找到根节点和划分特征节点的过程会以随机的方式进行。</p>
 <h2 id="2-为何用随机算法"><a href="#2-为何用随机算法" class="headerlink" title="2.为何用随机算法"></a>2.为何用随机算法</h2><p>我们为何使用随机森林算法主要有四点原因。第一点就是如开头所说，随机森林既可用于分类问题，也可用于回归问题。第二点，过拟合是个非常关键的问题，可能会让模型的结果变得糟糕。但对于随机森林来说，如果森林中的树足够多，那么分类器就不会过拟合模型。第三点是随机森林的分类器可以处理缺失值。最后一点，随机森林分类器可以用分类值建模。</p>
 <h2 id="3-随机森林算法的现实例子"><a href="#3-随机森林算法的现实例子" class="headerlink" title="3.随机森林算法的现实例子"></a>3.随机森林算法的现实例子</h2><p>我们举出一些例子，让你更好的理解随机森林。假设小明想去不同的地方度假两周，向朋友征求意见。朋友会问小明他都去过哪些地方，喜不喜欢这些地方。根据小明的回答，朋友就开始给出建议。这里，小明的朋友用的就是决策树方法。小明想问问更多朋友的意见，因为他觉得一个朋友的方法没法帮他做出准确的决定。于是其他的朋友们同样问了小明很多随机的问题，然后给出建议。最后，小明把推荐人数最多的那个地方作为度假目的地。我们详细说说这里所举的例子。其中一位朋友问了小明一些问题，并根据他的回答给出了目的地建议。单从这里看，这是典型的决策树方法。朋友根据小明的回答形成了规律，然后用规律去找到符合规律的答案。但小明的朋友们同时还以随机的方式问了他很多不同的问题，并给出了建议，也就是对度假目的地的投票。最后，得票率最高的地方就是小明选择的目的地。这里用到的就是典型的随机森林方法。</p>
 <h2 id="4-随机森林算法的工作原理"><a href="#4-随机森林算法的工作原理" class="headerlink" title="4.随机森林算法的工作原理"></a>4.随机森林算法的工作原理</h2><p>随机森林算法又两个阶段，一个阶段是创建随机森林，另一个是根据前一个阶段创建的随机森林分类器做出预测。整个过程如下所示：</p>
@@ -512,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/LeetCode每日三题pickone-837-New-21-Game/" rel="next" title="LeetCode每日三题pickone(837 New 21 Game)">
-                <i class="fa fa-chevron-left"></i> LeetCode每日三题pickone(837 New 21 Game)
+              <a href="/LeetCode每日三题pickone-837-New-21-Game/" rel="next" title="【LeetCode】837. New 21 Game">
+                <i class="fa fa-chevron-left"></i> 【LeetCode】837. New 21 Game
               </a>
             
           </div>
@@ -522,8 +539,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/TopK/" rel="prev" title="算法经典问题(TopK)-[LeetCode]215. Kth Largest Element in an Array">
-                算法经典问题(TopK)-[LeetCode]215. Kth Largest Element in an Array <i class="fa fa-chevron-right"></i>
+              <a href="/TopK/" rel="prev" title="【LeetCode】215. Kth Largest Element in an Array">
+                【LeetCode】215. Kth Largest Element in an Array <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,7 +676,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -702,7 +719,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习-随机森林"><span class="nav-number">1.</span> <span class="nav-text">机器学习 - 随机森林</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是随机森林"><span class="nav-number">1.1.</span> <span class="nav-text">1.什么是随机森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-为何用随机算法"><span class="nav-number">1.2.</span> <span class="nav-text">2.为何用随机算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-随机森林算法的现实例子"><span class="nav-number">1.3.</span> <span class="nav-text">3.随机森林算法的现实例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-随机森林算法的工作原理"><span class="nav-number">1.4.</span> <span class="nav-text">4.随机森林算法的工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-随机森林的应用案例"><span class="nav-number">1.5.</span> <span class="nav-text">5.随机森林的应用案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-随机森林的优点"><span class="nav-number">1.6.</span> <span class="nav-text">6.随机森林的优点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-随机森林的局限性"><span class="nav-number">1.6.1.</span> <span class="nav-text">7.随机森林的局限性</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是随机森林"><span class="nav-number">1.</span> <span class="nav-text">1.什么是随机森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-为何用随机算法"><span class="nav-number">2.</span> <span class="nav-text">2.为何用随机算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-随机森林算法的现实例子"><span class="nav-number">3.</span> <span class="nav-text">3.随机森林算法的现实例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-随机森林算法的工作原理"><span class="nav-number">4.</span> <span class="nav-text">4.随机森林算法的工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-随机森林的应用案例"><span class="nav-number">5.</span> <span class="nav-text">5.随机森林的应用案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-随机森林的优点"><span class="nav-number">6.</span> <span class="nav-text">6.随机森林的优点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-随机森林的局限性"><span class="nav-number">6.1.</span> <span class="nav-text">7.随机森林的局限性</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -820,37 +837,37 @@ var jiathis_config={
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
   
 
 

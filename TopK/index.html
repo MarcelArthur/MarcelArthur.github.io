@@ -14,6 +14,17 @@
 
 
 
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
 
 
 
@@ -42,7 +53,9 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -50,18 +63,20 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -70,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode,heapsort,">
+  <meta name="keywords" content="Heapsort,">
 
 
 
@@ -81,18 +96,18 @@
 
 
 
-<meta name="description" content="类型：PriorityQueue + MinHeap Time Complexity O(NlogK) 因为每次heap插入时间是log(1), 插入k个就是logk Space Complexity O(N)小顶堆   通常来说就是两种解决方案，这里就是其中之一用小顶堆解决的实现。 Python通过调用第三方的module heapq内部就实现了小顶堆的功能(实际自己实现下也不难),这里直接">
-<meta name="keywords" content="LeetCode,heapsort">
+<meta name="description" content="算法经典问题TopK">
+<meta name="keywords" content="Heapsort">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法经典问题(TopK)-[LeetCode]215. Kth Largest Element in an Array">
+<meta property="og:title" content="【LeetCode】215. Kth Largest Element in an Array">
 <meta property="og:url" content="http://marcelarthur.xyz/TopK/index.html">
 <meta property="og:site_name" content="馍馍大人的小屋">
-<meta property="og:description" content="类型：PriorityQueue + MinHeap Time Complexity O(NlogK) 因为每次heap插入时间是log(1), 插入k个就是logk Space Complexity O(N)小顶堆   通常来说就是两种解决方案，这里就是其中之一用小顶堆解决的实现。 Python通过调用第三方的module heapq内部就实现了小顶堆的功能(实际自己实现下也不难),这里直接">
+<meta property="og:description" content="算法经典问题TopK">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-20T09:45:12.916Z">
+<meta property="og:updated_time" content="2019-02-02T09:23:16.825Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法经典问题(TopK)-[LeetCode]215. Kth Largest Element in an Array">
-<meta name="twitter:description" content="类型：PriorityQueue + MinHeap Time Complexity O(NlogK) 因为每次heap插入时间是log(1), 插入k个就是logk Space Complexity O(N)小顶堆   通常来说就是两种解决方案，这里就是其中之一用小顶堆解决的实现。 Python通过调用第三方的module heapq内部就实现了小顶堆的功能(实际自己实现下也不难),这里直接">
+<meta name="twitter:title" content="【LeetCode】215. Kth Largest Element in an Array">
+<meta name="twitter:description" content="算法经典问题TopK">
 
 
 
@@ -128,7 +143,7 @@
 
 
 
-  <title>算法经典问题(TopK)-[LeetCode]215. Kth Largest Element in an Array | 馍馍大人的小屋</title>
+  <title>【LeetCode】215. Kth Largest Element in an Array | 馍馍大人的小屋</title>
   
 
 
@@ -310,7 +325,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">算法经典问题(TopK)-[LeetCode]215. Kth Largest Element in an Array</h2>
+          <h2 class="post-title" itemprop="name headline">【LeetCode】215. Kth Largest Element in an Array</h2>
         
 
         <div class="post-meta">
@@ -347,17 +362,6 @@
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/算法/" itemprop="url" rel="index">
                     <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/算法迷思/" itemprop="url" rel="index">
-                    <span itemprop="name">算法迷思</span>
                   </a>
                 </span>
 
@@ -402,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  506
+                  513
                 </span>
               
 
@@ -439,7 +443,9 @@
       
 
       
-        <blockquote>
+        <p>算法经典问题TopK</p>
+<a id="more"></a>
+<blockquote>
 <ul>
 <li>类型：PriorityQueue + MinHeap</li>
 <li>Time Complexity O(NlogK) 因为每次heap插入时间是log(1), 插入k个就是logk</li>
@@ -487,9 +493,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
-          
-            <a href="/tags/heapsort/" rel="tag"><i class="fa fa-tag"></i> heapsort</a>
+            <a href="/tags/Heapsort/" rel="tag"><i class="fa fa-tag"></i> Heapsort</a>
           
         </div>
       
@@ -512,8 +516,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/LeetCode刷题实录_sum合集/" rel="prev" title="LeetCode刷题记录————15. 2sum,3sum,3sum closest,4sum">
-                LeetCode刷题记录————15. 2sum,3sum,3sum closest,4sum <i class="fa fa-chevron-right"></i>
+              <a href="/312-Burst-Balloons-LeetCode/" rel="prev" title="【LeetCode】312.Burst Balloons">
+                【LeetCode】312.Burst Balloons <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -640,7 +644,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -785,37 +789,37 @@ var jiathis_config={
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
   
 
 
@@ -865,7 +869,7 @@ var jiathis_config={
         var disqus_config = function () {
           this.page.url = 'http://marcelarthur.xyz/TopK/';
           this.page.identifier = 'TopK/';
-          this.page.title = '算法经典问题(TopK)-[LeetCode]215. Kth Largest Element in an Array';
+          this.page.title = '【LeetCode】215. Kth Largest Element in an Array';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://marcelarthur.disqus.com/embed.js';

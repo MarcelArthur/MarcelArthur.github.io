@@ -14,6 +14,17 @@
 
 
 
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
 
 
 
@@ -42,7 +53,9 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -50,18 +63,20 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -70,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode,greedy algorithm,">
+  <meta name="keywords" content="Greedy algorithm,">
 
 
 
@@ -82,16 +97,16 @@
 
 
 <meta name="description" content="Problems:We have jobs: difficulty[i] is the difficulty of the ith job, and profit[i] is the profit of the ith job.  Now we have some workers. worker[i] is the ability of the ith worker, which means th">
-<meta name="keywords" content="LeetCode,greedy algorithm">
+<meta name="keywords" content="Greedy algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode每日三题pickone(826. Most Profit Assigning Work)">
+<meta property="og:title" content="【LeetCode】826. Most Profit Assigning Work">
 <meta property="og:url" content="http://marcelarthur.xyz/LeetCode每日三题pickone-826-Most-Profit-Assigning-Work/index.html">
 <meta property="og:site_name" content="馍馍大人的小屋">
 <meta property="og:description" content="Problems:We have jobs: difficulty[i] is the difficulty of the ith job, and profit[i] is the profit of the ith job.  Now we have some workers. worker[i] is the ability of the ith worker, which means th">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-20T09:45:12.877Z">
+<meta property="og:updated_time" content="2019-02-02T09:22:35.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode每日三题pickone(826. Most Profit Assigning Work)">
+<meta name="twitter:title" content="【LeetCode】826. Most Profit Assigning Work">
 <meta name="twitter:description" content="Problems:We have jobs: difficulty[i] is the difficulty of the ith job, and profit[i] is the profit of the ith job.  Now we have some workers. worker[i] is the ability of the ith worker, which means th">
 
 
@@ -128,7 +143,7 @@
 
 
 
-  <title>LeetCode每日三题pickone(826. Most Profit Assigning Work) | 馍馍大人的小屋</title>
+  <title>【LeetCode】826. Most Profit Assigning Work | 馍馍大人的小屋</title>
   
 
 
@@ -310,7 +325,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">LeetCode每日三题pickone(826. Most Profit Assigning Work)</h2>
+          <h2 class="post-title" itemprop="name headline">【LeetCode】826. Most Profit Assigning Work</h2>
         
 
         <div class="post-meta">
@@ -433,6 +448,7 @@
 <p>Every worker can be assigned at most one job, but one job can be completed multiple times.</p>
 <p>For example, if 3 people attempt the same job that pays $1, then the total profit will be $3.  If a worker cannot complete any job, his profit is $0.</p>
 <p>What is the most profit we can make?</p>
+<a id="more"></a>
 <h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h4><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: difficulty = <span class="comment">[2,4,6,8,10]</span>, profit = <span class="comment">[10,20,30,40,50]</span>, worker = <span class="comment">[4,5,6,7]</span></span><br><span class="line">Output: 100 </span><br><span class="line">Explanation: Workers <span class="keyword">are</span> assigned jobs <span class="keyword">of</span> difficulty <span class="comment">[4,4,6,6]</span> and they get profit <span class="keyword">of</span> <span class="comment">[20,20,30,30]</span> seperately.</span><br></pre></td></tr></table></figure>
 <h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes:"></a>Notes:</h4><ul>
 <li>1 &lt;= difficulty.length = profit.length &lt;= 10000</li>
@@ -474,9 +490,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
-          
-            <a href="/tags/greedy-algorithm/" rel="tag"><i class="fa fa-tag"></i> greedy algorithm</a>
+            <a href="/tags/Greedy-algorithm/" rel="tag"><i class="fa fa-tag"></i> Greedy algorithm</a>
           
         </div>
       
@@ -489,14 +503,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/LeetCode刷题实录_sum合集/" rel="next" title="【LeetCode】求和问题合集(2sum,3sum,3sum closest,4sum)">
+                <i class="fa fa-chevron-left"></i> 【LeetCode】求和问题合集(2sum,3sum,3sum closest,4sum)
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/LeetCode每日三题pickone-39-Combination-Sum/" rel="prev" title="LeetCode每日三题pickone(39 Combination Sum)">
-                LeetCode每日三题pickone(39 Combination Sum) <i class="fa fa-chevron-right"></i>
+              <a href="/LeetCode每日三题pickone-39-Combination-Sum/" rel="prev" title="【LeetCode】39. Combination Sum">
+                【LeetCode】39. Combination Sum <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -632,7 +650,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -793,37 +811,37 @@ var jiathis_config={
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
   
 
 
@@ -873,7 +891,7 @@ var jiathis_config={
         var disqus_config = function () {
           this.page.url = 'http://marcelarthur.xyz/LeetCode每日三题pickone-826-Most-Profit-Assigning-Work/';
           this.page.identifier = 'LeetCode每日三题pickone-826-Most-Profit-Assigning-Work/';
-          this.page.title = 'LeetCode每日三题pickone(826. Most Profit Assigning Work)';
+          this.page.title = '【LeetCode】826. Most Profit Assigning Work';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://marcelarthur.disqus.com/embed.js';
