@@ -2,23 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://marcelarthur.xyz/TopK/</loc>
+    <loc>http://marcelarthur.xyz/MachineLearning-Random-Forest/</loc>
     
-    <lastmod>2019-02-02T09:23:16.825Z</lastmod>
+    <lastmod>2019-02-02T09:26:32.021Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://marcelarthur.xyz/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%89%E9%A2%98pickone-837-New-21-Game/</loc>
+    
+    <lastmod>2019-02-02T09:26:26.424Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://marcelarthur.xyz/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%89%E9%A2%98pickone-826-Most-Profit-Assigning-Work/</loc>
     
-    <lastmod>2019-02-02T09:22:35.795Z</lastmod>
+    <lastmod>2019-02-02T09:26:23.966Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://marcelarthur.xyz/MachineLearning-Random-Forest/</loc>
+    <loc>http://marcelarthur.xyz/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%89%E9%A2%98pickone-39-Combination-Sum/</loc>
     
-    <lastmod>2019-02-02T09:21:43.145Z</lastmod>
+    <lastmod>2019-02-02T09:26:19.943Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://marcelarthur.xyz/312-Burst-Balloons-LeetCode/</loc>
+    
+    <lastmod>2019-02-02T09:26:13.109Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://marcelarthur.xyz/TopK/</loc>
+    
+    <lastmod>2019-02-02T09:23:16.825Z</lastmod>
     
   </url>
   
@@ -30,30 +51,9 @@
   </url>
   
   <url>
-    <loc>http://marcelarthur.xyz/312-Burst-Balloons-LeetCode/</loc>
-    
-    <lastmod>2019-02-02T09:18:21.608Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://marcelarthur.xyz/LeetCode%E5%88%B7%E9%A2%98%E5%AE%9E%E5%BD%95_sum%E5%90%88%E9%9B%86/</loc>
     
     <lastmod>2019-02-02T09:18:20.515Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://marcelarthur.xyz/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%89%E9%A2%98pickone-39-Combination-Sum/</loc>
-    
-    <lastmod>2019-02-02T09:18:19.875Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://marcelarthur.xyz/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%89%E9%A2%98pickone-837-New-21-Game/</loc>
-    
-    <lastmod>2019-02-02T09:18:18.662Z</lastmod>
     
   </url>
   
