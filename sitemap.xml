@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://marcelarthur.xyz/WanderingEarth/</loc>
+    
+    <lastmod>2019-02-11T00:22:06.703Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://marcelarthur.xyz/MachineLearning-Random-Forest/</loc>
     
     <lastmod>2019-02-02T09:26:32.021Z</lastmod>
