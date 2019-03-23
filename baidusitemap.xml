@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://marcelarthur.xyz/Compare_And_Swap/</loc>
+    <lastmod>2019-03-23</lastmod>
+  </url>  <url>
     <loc>http://marcelarthur.xyz/Leetcode_899_Orderly_Queue/</loc>
-    <lastmod>2019-02-15</lastmod>
+    <lastmod>2019-03-16</lastmod>
   </url>  <url>
     <loc>http://marcelarthur.xyz/WanderingEarth/</loc>
     <lastmod>2019-02-12</lastmod>
